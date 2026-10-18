@@ -1,11 +1,11 @@
 /* ==========================================================================
    Xueming Steel — main.js
-   Small, dependency-free interactions:
+   Small, dependency-free interactions shared across all pages:
    1. Sticky header shadow on scroll
    2. Mobile hamburger navigation
    3. Subtle reveal-on-scroll (fade-in)
-   4. Active nav link highlighting on scroll
-   5. Request-a-Quote form -> mailto (placeholder; see TODO below)
+   4. Request-a-Quote form -> mailto (placeholder; see TODO below)
+   5. Footer year
    ========================================================================== */
 
 (function () {
@@ -20,7 +20,6 @@
     if (header) {
       header.classList.toggle("is-scrolled", window.scrollY > 8);
     }
-    highlightNav();
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -34,7 +33,7 @@
     });
 
     // Close the menu when a link is tapped (mobile).
-    mainNav.querySelectorAll(".nav-link").forEach(function (link) {
+    mainNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         mainNav.classList.remove("is-open");
         navToggle.setAttribute("aria-expanded", "false");
@@ -62,31 +61,15 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* 4. Active nav link highlighting ------------------------------------ */
-  var sections = document.querySelectorAll("main section[id], #top");
-  var navLinks = document.querySelectorAll(".nav-link");
-
-  function highlightNav() {
-    var currentId = "top";
-    var scrollPos = window.scrollY + 120;
-
-    sections.forEach(function (sec) {
-      if (sec.offsetTop <= scrollPos) {
-        currentId = sec.id;
-      }
-    });
-
-    navLinks.forEach(function (link) {
-      var href = link.getAttribute("href").replace("#", "");
-      link.classList.toggle("is-active", href === currentId);
-    });
-  }
-
-  /* 5. Request-a-Quote form -> mailto (placeholder) --------------------- */
+  /* 4. Request-a-Quote form -> mailto (placeholder) --------------------- */
   /*
    * TODO: Connect this form to company email / backend.
    * For now it opens the user's email client with a pre-filled inquiry,
    * so no server is required in this first static version.
+   *
+   * Integration point (later): POST this form to a form handler or
+   * company email service. Replace the `recipient` below with the real
+   * company email address.
    */
   var form = document.getElementById("quoteForm");
   if (form) {
@@ -107,8 +90,10 @@
       });
 
       if (missing) {
-        form.querySelector(".form-note").textContent =
-          "Please fill in the required fields marked with *.";
+        var note = form.querySelector(".form-note");
+        if (note) {
+          note.textContent = "Please fill in the required fields marked with *.";
+        }
         return;
       }
 
@@ -141,12 +126,14 @@
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
 
-      form.querySelector(".form-note").textContent =
-        "Opening your email client to send the inquiry…";
+      var note = form.querySelector(".form-note");
+      if (note) {
+        note.textContent = "Opening your email client to send the inquiry…";
+      }
     });
   }
 
-  /* 6. Footer year ------------------------------------------------------ */
+  /* 5. Footer year ------------------------------------------------------ */
   var yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Contact — Request a Quote | Xueming Steel</title>
+  <meta name="description" content="Request a quote for high carbon steel, spring steel, steel strip and coil. Tell us your material, thickness, width, quantity and hardness requirements." />
+  <meta name="keywords" content="request a quote, steel inquiry, high carbon steel quote, spring steel quote, steel strip quote" />
+
+  <!-- Open Graph (basic) -->
+  <meta property="og:title" content="Contact | Xueming Steel" />
+  <meta property="og:description" content="Request a quote for high carbon and spring steel strip and coil." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+  ============================================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Xueming Steel home">
+        <span class="logo-mark">XS</span>
+        <span class="logo-text"><strong>XUEMING</strong><em>STEEL</em></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="processing.html" class="nav-link">Processing</a></li>
+          <li><a href="quality.html" class="nav-link">Quality</a></li>
+          <li><a href="factory.html" class="nav-link">Factory</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link is-active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="contact.html" class="btn btn-accent btn-quote">Request a Quote</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-crumbs"><a href="index.html">Home</a> <span class="sep">/</span> Contact</p>
+        <p class="eyebrow">Get in Touch</p>
+        <h1 class="page-hero-title">Request a Quote</h1>
+        <p class="page-hero-sub">
+          Tell us your material, size and quantity requirements and we will
+          respond with availability and a quotation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout reveal">
+
+          <div class="contact-info">
+            <h3>Contact Details</h3>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-label">Email</span>
+                <a href="mailto:hohoyood@gmail.com">hohoyood@gmail.com</a>
+              </li>
+              <li>
+                <span class="contact-label">WhatsApp</span>
+                <a href="https://wa.me/8618942322052" target="_blank" rel="noopener">+86 18942322052</a>
+              </li>
+              <li>
+                <span class="contact-label">Phone</span>
+                <a href="tel:+8618942322052">+86 18942322052</a>
+              </li>
+              <li>
+                <span class="contact-label">Address</span>
+                <span>Nanhai District, Foshan, Guangdong, China</span>
+              </li>
+              <li>
+                <span class="contact-label">Business Hours</span>
+                <span>[BUSINESS HOURS — to be provided]</span>
+              </li>
+            </ul>
+          </div>
+
+          <!--
+            TODO: Connect this form to a backend / email service.
+            Currently there is NO backend — the form is handled by
+            js/main.js, which opens the visitor's email client (mailto).
+            To add email delivery later, point this form's action to a
+            form handler (e.g. Formspree, a server endpoint, or your
+            company mail service) and update the recipient in js/main.js.
+          -->
+          <form class="quote-form" id="quoteForm" action="#" method="post" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fName">Name *</label>
+                <input type="text" id="fName" name="name" required placeholder="Your name" />
+              </div>
+              <div class="form-field">
+                <label for="fCompany">Company</label>
+                <input type="text" id="fCompany" name="company" placeholder="Company name" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fCountry">Country *</label>
+                <input type="text" id="fCountry" name="country" required placeholder="Country" />
+              </div>
+              <div class="form-field">
+                <label for="fEmail">Email *</label>
+                <input type="email" id="fEmail" name="email" required placeholder="you@company.com" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fWhatsapp">WhatsApp</label>
+                <input type="text" id="fWhatsapp" name="whatsapp" placeholder="WhatsApp number" />
+              </div>
+              <div class="form-field">
+                <label for="fMaterial">Material *</label>
+                <input type="text" id="fMaterial" name="material" required placeholder="e.g. 65Mn, SK5, 75Cr1" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fThickness">Thickness</label>
+                <input type="text" id="fThickness" name="thickness" placeholder="e.g. 0.5 mm" />
+              </div>
+              <div class="form-field">
+                <label for="fWidth">Width</label>
+                <input type="text" id="fWidth" name="width" placeholder="e.g. 50 mm" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fQuantity">Quantity</label>
+                <input type="text" id="fQuantity" name="quantity" placeholder="e.g. 20 tons" />
+              </div>
+              <div class="form-field">
+                <label for="fHardness">Required Hardness</label>
+                <input type="text" id="fHardness" name="hardness" placeholder="e.g. HRC 45–50" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="fMessage">Message</label>
+              <textarea id="fMessage" name="message" rows="4" placeholder="Additional requirements, tolerances, delivery, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-accent btn-block">Send Inquiry</button>
+            <p class="form-note">We will reply by email or WhatsApp. Your details are used only to respond to your inquiry.</p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">XUEMING <strong>STEEL</strong></span>
+        <p>Carbon and spring steel strip processing for industrial applications.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="processing.html">Processing</a></li>
+          <li><a href="quality.html">Quality</a></li>
+          <li><a href="factory.html">Factory</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <ul>
+          <li>Email: <a href="mailto:hohoyood@gmail.com">hohoyood@gmail.com</a></li>
+          <li>WhatsApp: <a href="https://wa.me/8618942322052" target="_blank" rel="noopener">+86 18942322052</a></li>
+          <li>Phone: <a href="tel:+8618942322052">+86 18942322052</a></li>
+          <li>Nanhai District, Foshan, Guangdong, China</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Xueming Steel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

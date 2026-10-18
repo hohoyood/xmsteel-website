@@ -741,3 +741,175 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .flow-steps { gap: 8px; }
   .flow-steps li { font-size: 0.82rem; }
 }
+
+/* ==========================================================================
+   17. Inner-page components (multi-page structure)
+   ========================================================================== */
+
+/* Page hero banner (sub-pages) */
+.page-hero {
+  background: var(--navy);
+  border-bottom: 3px solid var(--accent);
+  padding: 56px 0 60px;
+}
+.page-hero .eyebrow { color: #e58b93; margin-bottom: 12px; }
+.page-crumbs {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  font-size: 0.8rem; letter-spacing: 0.04em; color: #9aa6b5;
+  margin: 0 0 14px;
+}
+.page-crumbs a { color: #c7d0dc; }
+.page-crumbs a:hover { color: var(--white); }
+.page-crumbs .sep { color: #5b6b82; }
+.page-hero-title {
+  color: var(--white);
+  font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+.page-hero-sub { color: #c7d0dc; font-size: 1.05rem; max-width: 46em; margin: 0; }
+
+/* Product detail blocks (products page) */
+.product-list { padding-top: 24px; }
+.product-detail {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 44px;
+  align-items: start;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+.product-detail:last-child { border-bottom: 0; }
+.product-detail:nth-child(even) .product-detail-media { order: 2; }
+.product-detail-media {
+  margin: 0; aspect-ratio: 4 / 3; overflow: hidden;
+  border: 1px solid var(--gray-200); background: var(--gray-100);
+}
+.product-detail-media img { width: 100%; height: 100%; object-fit: cover; }
+.product-detail-copy .eyebrow { margin-bottom: 8px; }
+.product-detail-title { font-size: 1.4rem; margin-bottom: 10px; }
+.product-detail-desc { color: var(--gray-600); margin-bottom: 20px; }
+
+.grade-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.grade-tag {
+  font-size: 0.82rem; font-weight: 600; color: var(--navy);
+  background: var(--navy-soft); border: 1px solid var(--gray-200);
+  padding: 6px 12px; border-radius: var(--radius);
+}
+.grade-note { font-size: 0.82rem; color: var(--gray-500); margin-top: 10px; }
+
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.spec-block { border: 1px solid var(--gray-200); background: var(--white); padding: 16px 18px; }
+.spec-block h4 {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--gray-500); margin: 0 0 10px; padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+}
+.spec-block ul { display: grid; gap: 7px; }
+.spec-block li { position: relative; padding-left: 14px; font-size: 0.88rem; color: var(--gray-600); }
+.spec-block li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; background: var(--accent); }
+.spec-placeholder { color: var(--gray-500); font-style: italic; }
+
+/* Process cards with images (processing page) */
+.process-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.process-card {
+  display: flex; flex-direction: column;
+  background: var(--white); border: 1px solid var(--gray-200);
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+.process-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.process-card-media { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--gray-200); background: var(--gray-100); }
+.process-card-media img { width: 100%; height: 100%; object-fit: cover; }
+.process-card-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.process-card-num { font-size: 0.8rem; font-weight: 700; color: var(--gray-200); letter-spacing: 0.05em; }
+.process-card-title { font-size: 1.08rem; margin: 0; }
+.process-card-text { font-size: 0.94rem; color: var(--gray-600); margin: 0; }
+.process-card-value { margin-top: auto; border-top: 1px solid var(--gray-200); padding-top: 12px; font-size: 0.88rem; color: var(--gray-600); }
+.process-card-value strong { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 4px; }
+
+/* Equipment / inspection cards (quality page) */
+.equipment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.equipment-card { background: var(--white); border: 1px solid var(--gray-200); }
+.equipment-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: 1px solid var(--gray-200); }
+.equipment-body { padding: 16px 18px; }
+.equipment-body h3 { font-size: 1rem; margin-bottom: 6px; }
+.equipment-body p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
+
+/* Flow band (quality page) */
+.flow-band {
+  background: var(--white); border: 1px solid var(--gray-200);
+  padding: 28px 32px;
+}
+.flow-band .flow-steps { margin-bottom: 0; justify-content: center; }
+
+/* Placeholder boxes (about page) */
+.placeholder-box {
+  border: 1px dashed var(--gray-200);
+  background: var(--navy-soft);
+  padding: 26px 28px;
+  color: var(--gray-500);
+}
+.placeholder-box .ph-label {
+  display: block; font-size: 0.74rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-500);
+  margin-bottom: 8px;
+}
+.placeholder-box p { margin: 0; font-size: 0.95rem; }
+
+/* Bottom CTA band */
+.cta-band { background: var(--navy); border-top: 3px solid var(--accent); padding: 52px 0; }
+.cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.cta-band h2 { color: var(--white); font-size: 1.5rem; margin: 0 0 6px; }
+.cta-band p { color: #c7d0dc; margin: 0; }
+.cta-band .btn-outline { border-color: var(--white); color: var(--white); }
+.cta-band .btn-outline:hover { background: var(--white); color: var(--navy); }
+
+/* Responsive for new components */
+@media (max-width: 1024px) {
+  .product-detail { grid-template-columns: 1fr; gap: 28px; }
+  .product-detail:nth-child(even) .product-detail-media { order: 0; }
+  .process-card-grid { grid-template-columns: repeat(2, 1fr); }
+  .equipment-grid { grid-template-columns: repeat(2, 1fr); }
+  .spec-grid { grid-template-columns: 1fr; }
+  .cta-band-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding: 40px 0 44px; }
+}
+
+@media (max-width: 520px) {
+  .process-card-grid { grid-template-columns: 1fr; }
+  .equipment-grid { grid-template-columns: 1fr; }
+}
+
+/* Section CTA (centered action below a section) */
+.section-cta { text-align: center; margin-top: 36px; }
+.section-cta .btn { min-width: 200px; }
+
+/* Small utilities for page content */
+.grade-tags--center { justify-content: center; }
+.text-center { text-align: center; }
+
+/* Inspection item cards (quality page) */
+.inspection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.inspection-item { border: 1px solid var(--gray-200); background: var(--white); padding: 20px 22px; }
+.inspection-item h3 { font-size: 1rem; margin-bottom: 6px; }
+.inspection-item p { font-size: 0.88rem; color: var(--gray-600); margin: 0; }
+@media (max-width: 1024px) { .inspection-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .inspection-grid { grid-template-columns: 1fr; } }
+
+/* Spacing utilities */
+.mt-24 { margin-top: 24px; }
+.mb-32 { margin-bottom: 32px; }
+
+/* Products page — "Common Grades" label above grade tags (page-scoped) */
+.products-page .grade-label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
